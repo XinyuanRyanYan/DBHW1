@@ -17,7 +17,7 @@ void rw_lock_init(ReaderWriterLock *rwlock) {
 
 bool check_if_reader_exists(ReaderWriterLock *rwlock) {
   for(int i = 0;i < NUM_COUNTERS; i++){
-    if(rwlock->reader_counters[i]){
+    if(rwlock->reader_counters[i]>0){
       return true;
     }
   }
